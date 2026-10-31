@@ -1,0 +1,40 @@
+{
+  "name": "@local/dsh-client-ui-archived",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Settings section for the DeepSeek Harness Web GUI: count the archived conversations and delete them from disk for good.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node test/harness.mjs && node test/client.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "archived-conversations"
+  ],
+  "license": "MIT"
+}

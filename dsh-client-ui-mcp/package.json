@@ -1,0 +1,44 @@
+{
+  "name": "@local/dsh-client-ui-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Settings section for the DeepSeek Harness Web GUI: list, add, and remove MCP servers, with their live connection status and discovered tools.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/patch-store.js",
+    "lib/probe.js",
+    "lib/yaml-subset.js",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node test/patch-store.test.mjs && node test/probe.test.mjs && node test/harness.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "license": "MIT"
+}

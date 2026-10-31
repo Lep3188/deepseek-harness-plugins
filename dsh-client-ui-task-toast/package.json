@@ -1,0 +1,43 @@
+{
+  "name": "@local/dsh-client-ui-task-toast",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Native Windows toast notifications when the DeepSeek Harness Web GUI finishes an agent turn.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "scripts/show-toast.ps1",
+    "scripts/ensure-shortcut.ps1",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node test/harness.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "toast",
+    "notifications"
+  ],
+  "license": "MIT"
+}

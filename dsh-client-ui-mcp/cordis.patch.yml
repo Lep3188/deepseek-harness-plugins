@@ -1,0 +1,10 @@
+# The mcp-ui bundle patch: one row, appended after every layer the web
+# composition already declares. The node half owns the profile's MCP rows and
+# serves the settings API; the browser half registers the Settings section
+# through the package's `dsh.client` declaration.
+#
+# Mounted last, so its insert lands after the shipped rows.
+
+- insert:
+    - id: ui-mcp
+      name: '@local/dsh-client-ui-mcp'

@@ -1,0 +1,11 @@
+# One row, appended after every layer the web composition already declares. The
+# row's node half serves the delete route; the browser half registers itself
+# through the package's `dsh.client` declaration, which the modules row scans
+# into window.__DSH_BOOT__ from the loader entries.
+#
+# Installing this plugin into a profile means adding this same insert row to
+# that profile's cordis.patch.yml, which hot-reloads (see README.md).
+
+- insert:
+    - id: ui-archived
+      name: '@local/dsh-client-ui-archived'

@@ -1,0 +1,10 @@
+# The task-toast bundle patch: one row, appended after every layer the web
+# composition already declares. The row's node half is a no-op; the browser
+# half registers itself through the package's `dsh.client` declaration, which
+# the modules row scans into window.__DSH_BOOT__.
+#
+# This bundle is mounted last, so its insert lands after the shipped rows.
+
+- insert:
+    - id: ui-task-toast
+      name: '@local/dsh-client-ui-task-toast'
